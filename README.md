@@ -17,3 +17,28 @@ function randomMole() {
 
 // Call the 'randomMole' function
 randomMole();
+
+
+
+
+
+function randomMole(){
+      squares.forEach(square => {
+        square.classList.remove('mole');
+})
+
+   let randomSquare =squares[Math.floor(Math.random()
+   *squares.length)]; 
+   randomSquare.classList.add('mole');   
+    hitPosition = randomSquare.id;            
+}
+
+randomMole();
+
+squares.forEach(square =>{
+    square.addEventListener('mousedown', () => {
+        if(square.id === hitPosition) {
+            scrore++;
+            scoreH2.innerText = 'Your Score ${score}';
+            hitPosition = null;
+        }  
